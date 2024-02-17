@@ -9,9 +9,7 @@ xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
 
         //convert the string content to json type
-        const data = JSON.parse(this.responseText);
-        // console.log(typeof data); //string
-        console.log(data);
+        const data = JSON.parse(this.responseText); 
 
         //use ID to update the element because it targets the unique elements
         document.getElementById('userName').innerHTML = data.login;
