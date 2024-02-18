@@ -1,5 +1,4 @@
 // XML http request
-
 function fetchData() {
     const requestUrl = 'https://api.github.com/users/imabhijeet';
     const xhr = new XMLHttpRequest();
@@ -12,14 +11,11 @@ function fetchData() {
 
             //convert the string content to json type
             const data = JSON.parse(this.responseText);
-            // console.log(typeof data); //string
-            console.log(data);
-
+ 
             //use ID to update the element because it targets the unique elements
             document.getElementById('userName').innerHTML = data.login;
             document.getElementById('userFollowers').innerHTML = `Followers: ${data.followers}`;
             document.getElementById('userFollowing').innerHTML = `Following: ${data.following}`;
-            document.getElementById('publicRepos').innerHTML = `Public Repos: ${data.public_repos}`;
 
             //profile pic
             const profileImageElement = document.getElementById('user-image');
@@ -38,3 +34,5 @@ function updateData() {
 }
 
 updateData();
+
+
